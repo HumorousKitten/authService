@@ -6,7 +6,7 @@ export function AccountList() {
 			<List.Item>
 				<Button
 					variant='subtle'
-					style={{ color: 'black' }}
+					style={{ color: 'black'}}
 				>
 					Admin
 				</Button>
