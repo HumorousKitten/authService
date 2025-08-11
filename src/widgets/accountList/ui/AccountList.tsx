@@ -1,42 +1,18 @@
-import { Button, Divider, List } from '@mantine/core'
+import { Button, Divider, Stack } from '@mantine/core'
 
 export function AccountList() {
+	const roles = ['Admin', 'PROJECT_ADMIN', 'WORKSPACE_ADMIN', 'User']
+
 	return (
-		<List listStyleType='none' flex='1' spacing='sm'>
-			<List.Item>
-				<Button
-					variant='subtle'
-					style={{ color: 'black'}}
-				>
-					Admin
-				</Button>
-			</List.Item>
-
-			<Divider />
-
-			<List.Item>
-				<Button variant='subtle' style={{ color: 'black' }}>
-					PROJECT_ADMIN
-				</Button>
-			</List.Item>
-
-			<Divider />
-
-			<List.Item>
-				<Button variant='subtle' style={{ color: 'black' }}>
-					WORKSPACE_ADMIN
-				</Button>
-			</List.Item>
-
-			<Divider />
-
-			<List.Item>
-				<Button variant='subtle' style={{ color: 'black' }}>
-					User
-				</Button>
-			</List.Item>
-
-			<Divider />
-		</List>
+		<Stack flex={1}>
+			{roles.map((role, index) => (
+				<Stack key={role} >
+					<Button variant='subtle' color='black' fullWidth size='md' radius='sm' >
+						{role}
+					</Button>
+					{index < roles.length - 1 && <Divider />}
+				</Stack>
+			))}
+		</Stack>
 	)
 }
